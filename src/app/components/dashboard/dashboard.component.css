@@ -1,0 +1,26 @@
+h1{
+    padding: 20px;
+}
+
+section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 5px 20px 20px 20px;
+    column-gap: 20px;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: 1.2rem;
+}
+
+input{
+    max-width: 400px;
+    height: 1.7rem;
+    padding: 3px;
+    font-size: 1rem;
+}

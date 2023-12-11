@@ -1,0 +1,16 @@
+<section>
+  <h1>Log In</h1>
+  <div>
+    <input type="email" placeholder="email" [(ngModel)]="email" />
+  </div>
+  <div>
+    <input type="password" placeholder="password" [(ngModel)]="password" />
+  </div>
+  <a href="/">Forgot Password?</a>
+  <a routerLink="/dashboard" class="sign-in" (click)="display()">
+    <button>Sign In</button>
+  </a>
+  <div class="line"></div>
+  <h3>Don't have an account? Sign up now!</h3>
+  <button class="sign-up">Sign Up</button>
+</section>
