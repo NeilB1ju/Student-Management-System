@@ -1,0 +1,25 @@
+<section>
+  <h1>Sign Up!</h1>
+  <div>
+    <input type="text" placeholder="User Name" [(ngModel)]="userName" />
+  </div>
+  <div>
+    <input type="password" placeholder="Password" [(ngModel)]="password" />
+  </div>
+  <div>
+    <input
+      type="password"
+      placeholder="Confirm Password"
+      [(ngModel)]="confirmPassword"
+    />
+  </div>
+  <div *ngIf="passwordDoNotMatch" class="error-container">
+    <p class="error">Passwords dont match</p>
+  </div>
+  <div *ngIf="usernameExists" class="error-container">
+    <p class="error">Username already exists</p>
+  </div>
+  <a class="sign-up" (click)="checkPassword()">
+    <button>Sign Up</button>
+  </a>
+</section>

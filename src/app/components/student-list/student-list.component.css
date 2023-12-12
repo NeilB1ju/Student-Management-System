@@ -1,0 +1,58 @@
+h1{
+    padding: 20px;
+}
+
+section{
+    padding: 20px;
+}
+
+table{
+    width: 100%;
+}
+
+table,tr,td,th{
+    border: 1px solid black;
+    padding: 2px;
+}   
+
+.name{
+    width: 10%;
+}
+
+.roll-number{
+    width: 5%;
+}
+
+.department{
+    width: 8%;
+}
+
+.country{
+    width: 8%
+}
+
+.city{
+    width: 8%;
+}
+
+.state{
+    width: 8%;
+}
+
+.address1{
+    width: 15%;
+}
+
+.address2{
+    width: 10%;
+}
+
+.dob{
+    width: 8%;
+}
+
+.pincode{
+    width: 8%;
+}
+
+

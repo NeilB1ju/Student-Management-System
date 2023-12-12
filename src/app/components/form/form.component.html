@@ -1,0 +1,89 @@
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="Name">Name</label>
+    <input type="text" id="name" required name="name" [(ngModel)]="name" />
+  </div>
+  <div>
+    <label for="roll-number">Roll Number</label>
+    <input
+      type="number"
+      id="roll-number"
+      required
+      name="roll-number"
+      [(ngModel)]="roll_no"
+    />
+  </div>
+  <div>
+    <label for="DOB">DOB</label>
+    <input type="date" id="DOB" required name="dob" [(ngModel)]="dob" />
+  </div>
+  <div>
+    <label for="address-1">Address 1</label>
+    <input
+      type="text"
+      id="address-1"
+      required
+      name="address-1"
+      [(ngModel)]="address1"
+    />
+  </div>
+  <div>
+    <label for="address-2">Address 2</label>
+    <input type="text" id="address-2" name="address-2" [(ngModel)]="address2" />
+  </div>
+  <div>
+    <label for="pincode">Pincode</label>
+    <input
+      type="number"
+      id="pincode"
+      required
+      name="pincode"
+      [(ngModel)]="pincode"
+    />
+  </div>
+  <div>
+    <label for="city">City</label>
+    <input type="text" id="city" required name="city" [(ngModel)]="city" />
+  </div>
+  <div>
+    <label for="state">State</label>
+    <input type="text" id="state" required name="state" [(ngModel)]="state" />
+  </div>
+  <div>
+    <label for="country">Country</label>
+    <input
+      type="text"
+      id="country"
+      required
+      name="country"
+      [(ngModel)]="country"
+    />
+  </div>
+  <div>
+    <label for="department">Department</label>
+    <input
+      type="text"
+      id="department"
+      required
+      name="department"
+      [(ngModel)]="department"
+    />
+  </div>
+  <div>
+    <label for="phone">Phone Number</label>
+    <input type="number" id="state" [(ngModel)]="phone" required name="phone" />
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<div *ngIf="invalidPhoneNumber" class="error-container">
+  <p class="error">Invalid Phone Number</p>
+</div>
+<div *ngIf="invalidPincode" class="error-container">
+  <p class="error">Invalid Pincode</p>
+</div>
+<div *ngIf="invalidRollNumber" class="error-container">
+  <p class="error">Roll Number already exists</p>
+</div>
+<div *ngIf="missingFields" class="error-container">
+  <p class="error">Some Fields Are Empty</p>
+</div>
