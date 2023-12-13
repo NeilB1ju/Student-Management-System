@@ -41,6 +41,8 @@ export class StudentService {
     const storedStudents = localStorage.getItem(localStorageKey);
     if (storedStudents) {
       this.students = JSON.parse(storedStudents);
+    } else {
+      this.students = [];
     }
   }
 

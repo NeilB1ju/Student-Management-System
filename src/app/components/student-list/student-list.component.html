@@ -1,16 +1,6 @@
 <app-navbar></app-navbar>
 <h1>Student List</h1>
 <section>
-  <!-- <div class="container" *ngFor="let student of students">
-    <div class="card">
-      <p>{{ student.name }}</p>
-      <p>{{ student.roll_no }}</p>
-      <p>{{ student.dob }}</p>
-      <p>{{ student.address1 }}</p>
-      <button>Edit</button>
-      <button (click)="deleteStudent(student.roll_no)">Delete</button>
-    </div>
-  </div> -->
   <table>
     <tr>
       <th class="name">Name</th>
@@ -40,7 +30,7 @@
       <td>{{ student.state }}</td>
       <td>{{ student.country }}</td>
       <td (click)="editStudent(student)">Edit</td>
-      <td (click)="deleteStudent(student.roll_no)">Delete</td>
+      <td (click)="openModal(student.roll_no)">Delete</td>
     </tr>
   </table>
 </section>

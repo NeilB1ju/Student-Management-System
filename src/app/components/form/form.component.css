@@ -27,7 +27,6 @@ input{
 
 button{
     margin-top: 20px;
-    grid-area: 7 / 1 / 8 / 2;
     width: 150px;
     height: 36px;
     border-radius: 10px;
@@ -39,6 +38,14 @@ button:hover{
     filter: brightness(95%);
     box-shadow:inset 0 1.5px 3px #7F8487;
     cursor: pointer;
+}
+
+.submit{
+    grid-area: 7 / 1 / 8 / 2;
+}
+
+.clear{
+    grid-area: 8 / 1 / 9 / 2;
 }
 
 .error{

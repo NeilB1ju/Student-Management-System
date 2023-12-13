@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -13,6 +14,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { EditStudentComponent } from './components/edit-student/edit-student.component';
 import { FormComponent } from './components/form/form.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +28,9 @@ import { FormComponent } from './components/form/form.component';
     ForgotPasswordComponent,
     EditStudentComponent,
     FormComponent,
+    ModalComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, MatDialogModule],
   providers: [],
   bootstrap: [AppComponent],
 })

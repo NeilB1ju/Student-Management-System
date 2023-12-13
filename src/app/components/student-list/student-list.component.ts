@@ -1,7 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { StudentService } from '../../services/student/student.service';
 import Student from '../../Student';
 import { Router } from '@angular/router';
+import { EditStudentService } from '../../services/edit-student/edit-student.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
+import { DeleteCommunicationService } from '../../services/delete-communication/delete-communication.service';
 
 @Component({
   selector: 'app-student-list',
@@ -9,17 +13,40 @@ import { Router } from '@angular/router';
   styleUrl: './student-list.component.css',
 })
 export class StudentListComponent {
-  constructor(private studentService: StudentService, private router: Router) {}
+  constructor(
+    private studentService: StudentService,
+    private router: Router,
+    private editStudentService: EditStudentService,
+    private dialog: MatDialog,
+    private deleteCommunicationService: DeleteCommunicationService
+  ) {}
 
-  //Add some sort of condition here that makes it so that the data is fetched everytime this component is
-  students: Student[] = this.studentService.getStudents();
-
-  deleteStudent(roll_no: any) {
-    this.studentService.deleteStudent(+roll_no);
-    this.students = this.studentService.students;
-  }
+  students: Student[] = [];
 
   editStudent(student: Student): void {
-    // this.router.navigate(['/edit']);
+    this.router.navigate(['/edit']);
+    this.editStudentService.saveStudent(student);
+  }
+
+  openModal(rollNumber: any): void {
+    this.dialog.open(ModalComponent, {
+      data: {
+        roll_no: rollNumber,
+      },
+    });
+  }
+
+  //Clear and reinitialize the student list everytime the component is loaded
+  ngOnInit(): void {
+    this.students = this.studentService.getStudents();
+    // Subscribe to the event emitted when a student is deleted
+    this.deleteCommunicationService.studentDeleted.subscribe(() => {
+      // Update the student list
+      this.students = this.studentService.getStudents();
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.students! = [];
   }
 }

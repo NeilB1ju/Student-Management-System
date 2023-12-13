@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import Student from '../../Student';
 import { StudentService } from '../../services/student/student.service';
+import { EditStudentService } from '../../services/edit-student/edit-student.service';
 
 @Component({
   selector: 'app-form',
@@ -8,7 +9,10 @@ import { StudentService } from '../../services/student/student.service';
   styleUrl: './form.component.css',
 })
 export class FormComponent {
-  constructor(private studentService: StudentService) {}
+  constructor(
+    private studentService: StudentService,
+    private editStudentService: EditStudentService
+  ) {}
 
   name: string = '';
   roll_no: any = '';
@@ -26,6 +30,30 @@ export class FormComponent {
   invalidPincode: boolean = false;
   invalidRollNumber: boolean = false;
   missingFields: boolean = false;
+
+  @Input() text!: string; //Used to display edit or submit in the form
+  studentToBeEdited?: Student;
+
+  ngOnInit(): void {
+    this.editStudentService.studentToBeEdited.subscribe((student) => {
+      this.studentToBeEdited = student;
+      if (this.studentToBeEdited) {
+        // Populate form fields with data from studentToBeEdited
+        this.name = this.studentToBeEdited.name;
+        this.roll_no = this.studentToBeEdited.roll_no;
+        this.state = this.studentToBeEdited.state;
+        this.city = this.studentToBeEdited.city;
+        this.pincode = this.studentToBeEdited.pincode;
+        this.dob = this.studentToBeEdited.dob;
+        this.address1 = this.studentToBeEdited.address1;
+        this.address2 = this.studentToBeEdited.address2;
+        this.country = this.studentToBeEdited.country;
+        this.department = this.studentToBeEdited.department;
+        this.phone = this.studentToBeEdited.phone;
+      }
+      console.log(this.studentToBeEdited);
+    });
+  }
 
   onSubmit(): void {
     this.invalidPhoneNumber = false;
@@ -87,5 +115,13 @@ export class FormComponent {
     this.country = '';
     this.department = '';
     this.phone = '';
+  }
+
+  onClear(): void {
+    this.invalidPhoneNumber = false;
+    this.invalidPincode = false;
+    this.invalidRollNumber = false;
+    this.missingFields = false;
+    this.resetForm();
   }
 }

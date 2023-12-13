@@ -73,7 +73,8 @@
     <label for="phone">Phone Number</label>
     <input type="number" id="state" [(ngModel)]="phone" required name="phone" />
   </div>
-  <button type="submit">Submit</button>
+  <button type="submit" class="submit">{{ text }}</button>
+  <button class="clear" type="button" (click)="onClear()">Clear</button>
 </form>
 <div *ngIf="invalidPhoneNumber" class="error-container">
   <p class="error">Invalid Phone Number</p>
