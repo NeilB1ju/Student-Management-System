@@ -3,7 +3,7 @@
   <app-navbar-left></app-navbar-left>
   <div class="content-container">
     <h1>Student List</h1>
-    <section>
+    <section *ngIf="!studentsArrayEmpty">
       <table>
         <tr>
           <th class="name">Name</th>
@@ -44,6 +44,11 @@
           </td>
         </tr>
       </table>
+    </section>
+    <section *ngIf="studentsArrayEmpty">
+      <div class="container">
+        <h1>No Data Found</h1>
+      </div>
     </section>
   </div>
 </div>

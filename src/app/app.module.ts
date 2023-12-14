@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -16,6 +17,7 @@ import { FormComponent } from './components/form/form.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NavbarTopComponent } from './components/navbar-top/navbar-top.component';
 import { NavbarLeftComponent } from './components/navbar-left/navbar-left.component';
+import { ApiListComponent } from './components/api-list/api-list.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,15 @@ import { NavbarLeftComponent } from './components/navbar-left/navbar-left.compon
     ModalComponent,
     NavbarTopComponent,
     NavbarLeftComponent,
+    ApiListComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, MatDialogModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    MatDialogModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -2,7 +2,6 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
     padding: 20px;
     color: var(--primary-text);
 }
@@ -10,6 +9,10 @@ nav{
 div{
     display: flex;
     gap: 10px;
+}
+
+div:hover{
+    opacity: 50%;
 }
 
 a{

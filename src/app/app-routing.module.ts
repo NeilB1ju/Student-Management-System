@@ -7,6 +7,7 @@ import { StudentListComponent } from './components/student-list/student-list.com
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { EditStudentComponent } from './components/edit-student/edit-student.component';
+import { ApiListComponent } from './components/api-list/api-list.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'edit',
     component: EditStudentComponent,
+  },
+  {
+    path: 'api',
+    component: ApiListComponent,
   },
 ];
 

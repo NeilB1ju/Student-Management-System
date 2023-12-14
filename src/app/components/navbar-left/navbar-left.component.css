@@ -3,7 +3,7 @@ nav{
     color: var(--primary-text);
 }
 
-div{
+.container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,4 +16,25 @@ a{
     color: black;
     font-size: 1.3rem;
     color: var(--primary-text);
+}
+
+.nav-element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px
+}
+
+.nav-element:hover{
+    opacity: 50%;
+}
+
+img{
+    height: 40px;
+    width: 40px;
+}
+
+.list, .plus, .dashboard{
+    height: 30px;
+    width: 30px;
 }

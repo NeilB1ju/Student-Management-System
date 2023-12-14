@@ -22,7 +22,7 @@ label{
 input{
     width: 400px;
     height: 30px;
-    border: 2px solid var(--primary-text);
+    border: 2px solid var(--primary-background);
     padding: 5px;
     font-size: 1rem;
     border-radius: 10px;
@@ -36,6 +36,8 @@ button{
     border-radius: 10px;
     border: 2px solid black;
     transition: filter 0.2s ease-in-out;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 button:hover{

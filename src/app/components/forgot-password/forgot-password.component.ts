@@ -21,14 +21,14 @@ export class ForgotPasswordComponent {
   checkPassword(): void {
     this.invalidUsername = false;
     this.passwordDoNotMatch = false;
-    if (!this.loginService.checkUsernamePresence(this.userName)) {
+    if (!this.loginService.checkUsernamePresence(this.userName.trim())) {
       this.invalidUsername = true;
-    } else if (this.password !== this.confirmPassword) {
+    } else if (this.password.trim() !== this.confirmPassword?.trim()) {
       this.passwordDoNotMatch = true;
     } else {
       const loginCredential: LoginCredentials = {
-        username: this.userName,
-        password: this.password,
+        username: this.userName.trim(),
+        password: this.password.trim(),
       };
       this.loginService.modifyLogin(loginCredential);
       this.router.navigate(['/']);

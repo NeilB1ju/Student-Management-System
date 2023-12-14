@@ -1,0 +1,18 @@
+<div class="grid-container">
+  <app-navbar-top></app-navbar-top>
+  <app-navbar-left></app-navbar-left>
+  <div class="content-container">
+    <h1>Api List</h1>
+    <div class="card-container" *ngIf="users">
+      <div class="card" *ngFor="let user of users">
+        <img src="{{ user.image }}" alt="user image" />
+        <p class="name">{{ user.firstName }} {{ user.lastName }}</p>
+        <p>Age: {{ user.age }}</p>
+        <p>Gender: {{ user.gender }}</p>
+        <p>Address: {{ user.address.address }}</p>
+        <p>City: {{ user.address.city }}</p>
+        <p>Phone Number: {{ user.phone }}</p>
+      </div>
+    </div>
+  </div>
+</div>

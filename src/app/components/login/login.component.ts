@@ -20,8 +20,8 @@ export class LoginComponent {
     this.invalidPassword = false;
     this.invalidUsername = false;
     const result = this.loginService.validateLogin(
-      this.userName,
-      this.password
+      this.userName.trim(),
+      this.password.trim()
     );
     if (result == 'INVALID_PASSWORD') {
       this.invalidPassword = true;

@@ -37,13 +37,23 @@ export class StudentListComponent {
     });
   }
 
+  studentsArrayEmpty: boolean = false;
+
   //Clear and reinitialize the student list everytime the component is loaded
   ngOnInit(): void {
+    this.studentsArrayEmpty = false;
     this.students = this.studentService.getStudents();
+    if (this.students.length == 0) {
+      this.studentsArrayEmpty = true;
+    }
+
     // Subscribe to the event emitted when a student is deleted
     this.deleteCommunicationService.studentDeleted.subscribe(() => {
       // Update the student list
       this.students = this.studentService.getStudents();
+      if (this.students.length == 0) {
+        this.studentsArrayEmpty = true;
+      }
     });
   }
 
