@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { LoginService } from '../../services/login/login.service';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css',
+  selector: 'app-navbar-top',
+  templateUrl: './navbar-top.component.html',
+  styleUrl: './navbar-top.component.css',
 })
-export class NavbarComponent {
+export class NavbarTopComponent {
   constructor(private loginService: LoginService) {}
   username: string = this.loginService.currentUsername;
 }

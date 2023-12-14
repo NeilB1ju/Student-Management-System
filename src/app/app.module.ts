@@ -7,7 +7,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddStudentComponent } from './components/add-student/add-student.component';
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
@@ -15,13 +14,14 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { EditStudentComponent } from './components/edit-student/edit-student.component';
 import { FormComponent } from './components/form/form.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { NavbarTopComponent } from './components/navbar-top/navbar-top.component';
+import { NavbarLeftComponent } from './components/navbar-left/navbar-left.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    NavbarComponent,
     AddStudentComponent,
     StudentListComponent,
     SignUpComponent,
@@ -29,6 +29,8 @@ import { ModalComponent } from './components/modal/modal.component';
     EditStudentComponent,
     FormComponent,
     ModalComponent,
+    NavbarTopComponent,
+    NavbarLeftComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, MatDialogModule],
   providers: [],

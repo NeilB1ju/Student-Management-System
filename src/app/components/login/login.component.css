@@ -10,9 +10,11 @@ section{
     gap: 10px;
     width: 350px;
     height: 450px;
-    border: 1px solid black;
+    border: 1px solid var(--primary-text);
     padding: 20px;
     box-shadow: 0px 0px 5px 1px;
+    color: var(--content);
+    background-color: var(--secondary-background);
 }
 
 div{
@@ -23,11 +25,12 @@ div{
 
 input{
     width: 310px;
-    height: 40px;
-    border: 2px solid black;
+    height: 35x;
+    border: 2px solid var(--primary-text);
     padding: 5px;
     font-size: 1rem;
     border-radius: 10px;
+    background-color: var(--content);
 }
 
 h1{
@@ -39,14 +42,14 @@ button{
     width: 100%;
     height: 42px;
     border-radius: 20px;
-    background-color: lightblue;
+    background-color: var(--primary-text);
     font-size: 1rem;
     transition: filter 0.2s ease-in-out;
 }
 
 button:hover{
-    filter: brightness(95%);
-    box-shadow:inset 0 1.5px 3px #7F8487;
+    filter: brightness(80%);
+    box-shadow:inset 0 2px 5px var(--primary-background);
     cursor: pointer;
 }
 
@@ -60,7 +63,7 @@ h3{
 .line{
     height: 0;
     margin-top: 10px;
-    border: 1px solid black;
+    border: 1px solid var(--primary-background);
     width: 100%;
 }
 
@@ -68,18 +71,6 @@ h3{
     width: 100%;
 }
 
-.error{
-    color: black;
-    font-size: 1rem;
-}
-
-.error-container{
-    width: 100%;
-    background-color: red;
-    border-radius: 10px;
-    height: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    opacity: 90%;
+a{
+    color: var(--secondary-text);
 }

@@ -1,5 +1,6 @@
 h1{
     padding: 20px;
+    color: var(--primary-text);
 }
 
 section{
@@ -11,9 +12,18 @@ table{
 }
 
 table,tr,td,th{
-    border: 1px solid black;
-    padding: 2px;
+    border: 1px solid var(--content);
+    border-collapse: collapse;
+    padding: 5px;
 }   
+
+th{
+    color: var(--primary-text);
+}
+
+td{
+    color: var(--secondary-text);
+}
 
 .name{
     width: 10%;
@@ -55,4 +65,13 @@ table,tr,td,th{
     width: 8%;
 }
 
+.image-container{
+    text-align: center;
+    vertical-align: middle;
+}
 
+.edit-image, .delete-image{
+    height: 20px;
+    width: 20px;
+    color: var(--primary-text);
+}

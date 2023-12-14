@@ -24,8 +24,9 @@ export class StudentListComponent {
   students: Student[] = [];
 
   editStudent(student: Student): void {
+    this.editStudentService.setStudentData(student);
+    this.studentService.deleteStudent(+student.roll_no);
     this.router.navigate(['/edit']);
-    this.editStudentService.saveStudent(student);
   }
 
   openModal(rollNumber: any): void {

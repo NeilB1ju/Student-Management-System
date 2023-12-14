@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    border-radius: 30px;
+    background-color: var(--secondary-background);
 }
 
 button{
@@ -21,8 +21,11 @@ button{
     height: 40px;
     border-radius: 10px;
     font-size: 1.2rem;
+    background-color: var(--secondary-text);
+    color: var(--primary-background);
 }
 
 h1{
     font-size: 1.7rem;
+    color: var(--primary-text);
 }

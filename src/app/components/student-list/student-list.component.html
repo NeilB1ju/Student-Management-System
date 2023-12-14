@@ -1,36 +1,49 @@
-<app-navbar></app-navbar>
-<h1>Student List</h1>
-<section>
-  <table>
-    <tr>
-      <th class="name">Name</th>
-      <th class="roll-number">Roll Number</th>
-      <th class="dob">Date of Birth</th>
-      <th class="department">Department</th>
-      <th class="phone-number">Phone Number</th>
-      <th class="address1">Address 1</th>
-      <th class="address2">Address 2</th>
-      <th class="pincode">Pincode</th>
-      <th class="city">City</th>
-      <th class="state">State</th>
-      <th class="country">Country</th>
-      <th class="delete">Edit</th>
-      <th class="edit">Delete</th>
-    </tr>
-    <tr *ngFor="let student of students">
-      <td>{{ student.name }}</td>
-      <td>{{ student.roll_no }}</td>
-      <td>{{ student.dob }}</td>
-      <td>{{ student.department }}</td>
-      <td>{{ student.phone }}</td>
-      <td>{{ student.address1 }}</td>
-      <td>{{ student.address2 }}</td>
-      <td>{{ student.pincode }}</td>
-      <td>{{ student.city }}</td>
-      <td>{{ student.state }}</td>
-      <td>{{ student.country }}</td>
-      <td (click)="editStudent(student)">Edit</td>
-      <td (click)="openModal(student.roll_no)">Delete</td>
-    </tr>
-  </table>
-</section>
+<div class="grid-container">
+  <app-navbar-top></app-navbar-top>
+  <app-navbar-left></app-navbar-left>
+  <div class="content-container">
+    <h1>Student List</h1>
+    <section>
+      <table>
+        <tr>
+          <th class="name">Name</th>
+          <th class="roll-number">Roll Number</th>
+          <th class="dob">Date of Birth</th>
+          <th class="department">Department</th>
+          <th class="phone-number">Phone Number</th>
+          <th class="address1">Address 1</th>
+          <th class="address2">Address 2</th>
+          <th class="pincode">Pincode</th>
+          <th class="city">City</th>
+          <th class="state">State</th>
+          <th class="country">Country</th>
+          <th class="delete">Edit</th>
+          <th class="edit">Delete</th>
+        </tr>
+        <tr *ngFor="let student of students">
+          <td>{{ student.name }}</td>
+          <td>{{ student.roll_no }}</td>
+          <td>{{ student.dob }}</td>
+          <td>{{ student.department }}</td>
+          <td>{{ student.phone }}</td>
+          <td>{{ student.address1 }}</td>
+          <td>{{ student.address2 }}</td>
+          <td>{{ student.pincode }}</td>
+          <td>{{ student.city }}</td>
+          <td>{{ student.state }}</td>
+          <td>{{ student.country }}</td>
+          <td (click)="editStudent(student)" class="image-container">
+            <img src="../../../assets/edit.svg" alt="Edit" class="edit-image" />
+          </td>
+          <td (click)="openModal(student.roll_no)" class="image-container">
+            <img
+              src="../../../assets/delete.svg"
+              alt="Delete"
+              class="delete-image"
+            />
+          </td>
+        </tr>
+      </table>
+    </section>
+  </div>
+</div>

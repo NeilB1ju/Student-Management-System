@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import Student from '../../Student';
 import { StudentService } from '../../services/student/student.service';
 import { EditStudentService } from '../../services/edit-student/edit-student.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -11,7 +12,9 @@ import { EditStudentService } from '../../services/edit-student/edit-student.ser
 export class FormComponent {
   constructor(
     private studentService: StudentService,
-    private editStudentService: EditStudentService
+    private editStudentService: EditStudentService,
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   name: string = '';
@@ -35,24 +38,21 @@ export class FormComponent {
   studentToBeEdited?: Student;
 
   ngOnInit(): void {
-    this.editStudentService.studentToBeEdited.subscribe((student) => {
-      this.studentToBeEdited = student;
-      if (this.studentToBeEdited) {
-        // Populate form fields with data from studentToBeEdited
-        this.name = this.studentToBeEdited.name;
-        this.roll_no = this.studentToBeEdited.roll_no;
-        this.state = this.studentToBeEdited.state;
-        this.city = this.studentToBeEdited.city;
-        this.pincode = this.studentToBeEdited.pincode;
-        this.dob = this.studentToBeEdited.dob;
-        this.address1 = this.studentToBeEdited.address1;
-        this.address2 = this.studentToBeEdited.address2;
-        this.country = this.studentToBeEdited.country;
-        this.department = this.studentToBeEdited.department;
-        this.phone = this.studentToBeEdited.phone;
-      }
-      console.log(this.studentToBeEdited);
-    });
+    this.studentToBeEdited = this.editStudentService.getStudentData();
+    if (this.studentToBeEdited) {
+      // Populate form fields with data from studentToBeEdited
+      this.name = this.studentToBeEdited.name;
+      this.roll_no = this.studentToBeEdited.roll_no;
+      this.state = this.studentToBeEdited.state;
+      this.city = this.studentToBeEdited.city;
+      this.pincode = this.studentToBeEdited.pincode;
+      this.dob = this.studentToBeEdited.dob;
+      this.address1 = this.studentToBeEdited.address1;
+      this.address2 = this.studentToBeEdited.address2;
+      this.country = this.studentToBeEdited.country;
+      this.department = this.studentToBeEdited.department;
+      this.phone = this.studentToBeEdited.phone;
+    }
   }
 
   onSubmit(): void {
@@ -100,6 +100,10 @@ export class FormComponent {
       //Pass value to the service so it can be added to the students array
       this.studentService.addStudent(student);
       this.resetForm();
+      const currentRoute = this.route.snapshot.routeConfig?.path;
+      if (currentRoute === 'edit') {
+        this.router.navigate(['/list']);
+      }
     }
   }
 

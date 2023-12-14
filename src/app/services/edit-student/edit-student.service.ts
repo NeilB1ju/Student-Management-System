@@ -6,9 +6,13 @@ import Student from '../../Student';
   providedIn: 'root',
 })
 export class EditStudentService {
-  studentToBeEdited = new Subject<Student>();
+  studentToBeEdited: any = {};
 
-  saveStudent(student: Student): void {
-    this.studentToBeEdited.next({ ...student });
+  setStudentData(student: Student): void {
+    this.studentToBeEdited = student;
+  }
+
+  getStudentData(): any {
+    return this.studentToBeEdited;
   }
 }
