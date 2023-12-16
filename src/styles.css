@@ -3,9 +3,22 @@
 :root{
     --primary-text: #66FCF1;
     --secondary-text: #45A29E;
+    --tertiary-text: #dda15e;
     --content: #C5C6C7;
     --primary-background: #0B0C10;
     --secondary-background: #1F2833;
+    --input-color: #C5C6C7;
+    --input-border: #0B0C10;
+}
+
+.light-mode{
+    --primary-text: #0d1b2a;
+    --secondary-text: #1b263b;
+    --tertiary-text: #774936;
+    --content: #3a3938;
+    --primary-background: #f4f3ef;
+    --secondary-background: #E4DFDA;
+    --input-color: #edede9;
 }
 
 *{
@@ -43,7 +56,7 @@ a{
 .error-container{
     width: 100%;
     border-radius: 10px;
-    height: 35px;
+    height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -90,4 +103,9 @@ app-navbar-left {
 app-navbar-top, app-navbar-left, .content-container{
     background-color: var(--secondary-background);
     border-radius: 10px;
+}
+
+input{
+    background-color: var(--input-color);
+    border: 3px solid var(--input-border);
 }

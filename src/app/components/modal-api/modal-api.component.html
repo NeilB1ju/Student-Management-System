@@ -1,0 +1,10 @@
+<div class="modal-container">
+  <img src="{{ personToDisplay.image }}" alt="" />
+  <p>{{ personToDisplay.firstName }} {{ personToDisplay.lastName }}</p>
+  <p>Age: {{ personToDisplay.age }}</p>
+  <p>Address: {{ personToDisplay.address.address }}</p>
+  <p>City: {{ personToDisplay.address.city }}</p>
+  <p>Phone Number: {{ personToDisplay.phone }}</p>
+  <p>Email: {{ personToDisplay.email }}</p>
+  <button (click)="closeModal()">Close</button>
+</div>

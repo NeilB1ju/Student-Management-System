@@ -1,28 +1,54 @@
 <nav>
   <div class="container">
-    <div class="nav-element">
+    <a class="nav-element" routerLink="/dashboard">
       <img
+        *ngIf="!lightMode"
         src="../../../assets/dashboard.svg"
         alt="Dashboard"
         class="dashboard"
       />
-      <a routerLink="/dashboard">Dashboard</a>
-    </div>
-    <div class="nav-element">
-      <img src="../../../assets/plus.svg" alt="plus" class="plus" />
-      <a routerLink="/add">Add Student</a>
-    </div>
-    <div class="nav-element">
       <img
+        *ngIf="lightMode"
+        src="../../../assets/dashboard-light.svg"
+        alt="Dashboard"
+        class="dashboard"
+      />
+      <p>Dashboard</p>
+    </a>
+    <a class="nav-element" routerLink="/add">
+      <img
+        *ngIf="!lightMode"
+        src="../../../assets/plus.svg"
+        alt="plus"
+        class="plus"
+      />
+      <img
+        *ngIf="lightMode"
+        src="../../../assets/plus-light.svg"
+        alt="plus"
+        class="plus"
+      />
+      <p>Add Student</p>
+    </a>
+    <a class="nav-element" routerLink="/list">
+      <img
+        *ngIf="!lightMode"
         src="../../../assets/student-list.svg"
         alt="Student List"
         class="list"
       />
-      <a routerLink="/list">Student List</a>
-    </div>
-    <div class="nav-element">
-      <img src="../../../assets/api.svg" alt="API" />
-      <a routerLink="/api">Api List</a>
-    </div>
+      <img
+        *ngIf="lightMode"
+        src="../../../assets/student-list-light.svg"
+        alt="Student List"
+        class="list"
+      />
+      <p>Student List</p>
+    </a>
+    <a class="nav-element" routerLink="/api">
+      <img *ngIf="!lightMode" src="../../../assets/api.svg" alt="API" />
+      <img *ngIf="lightMode" src="../../../assets/api-light.svg" alt="API" />
+      <p>Api List</p>
+    </a>
   </div>
 </nav>

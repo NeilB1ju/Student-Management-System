@@ -54,4 +54,36 @@ export class StudentService {
     }
     return false;
   }
+
+  sortStudents(sortBy: string): void {
+    this.students.sort((a, b) => {
+      switch (sortBy) {
+        case 'roll_no':
+          return a.roll_no - b.roll_no;
+        case 'name':
+          return a.name.localeCompare(b.name);
+        case 'department':
+          return a.department.localeCompare(b.department);
+        default:
+          return 0;
+      }
+    });
+    this.saveToLocalStorage(); // Save the sorted array to local storage
+  }
+  searchStudents(searchTerm: string): Student[] {
+    return this.students.filter((student: Student) => {
+      return (
+        student.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        student.department.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        student.country.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        student.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        student.state.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        student.address1.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        student.address2.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        student.dob.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        student.roll_no == +searchTerm ||
+        student.phone == +searchTerm
+      );
+    });
+  }
 }

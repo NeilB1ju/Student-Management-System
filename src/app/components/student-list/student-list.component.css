@@ -17,7 +17,6 @@ th{
 }
 
 td{
-    color: var(--secondary-text);
     text-align: center;
 }
 
@@ -81,4 +80,54 @@ td{
 
 .container > h1{
     font-size:  2rem;
+}
+
+.even-row{
+    color: var(--secondary-text);
+}
+
+.odd-row{
+    color: var(--tertiary-text);
+}
+
+.list-header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between  ;
+}
+
+.sort-options{
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap:15px;
+}
+
+label{
+    font-size: 1.5rem;
+    color: var(--primary-text);
+}
+
+select{
+    background-color: var(--input-color);
+    border: 3px solid var(--input-border);
+    font-size: 1rem;
+    padding: 2px;
+    height: 1.7rem;
+    border-radius: 10px;
+}
+
+.search-container{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search{
+    width: 250px;
+    height: 1.7rem;
+    padding: 5px;
+    font-size: 1.1rem;
+    border-radius: 10px;
 }

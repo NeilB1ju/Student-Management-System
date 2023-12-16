@@ -4,20 +4,34 @@ nav{
     align-items: center;
     padding: 20px;
     color: var(--primary-text);
+    width: 100%;
 }
 
-div{
-    display: flex;
-    gap: 10px;
-}
-
-div:hover{
+a:hover{
     opacity: 50%;
+    cursor: pointer;
 }
 
 a{
-    text-decoration: none;
-    color: black;
     font-size: 1.3rem;
+    display: flex;
+    align-items: center;
     color: var(--primary-text);
+}
+
+img{
+    height: 40px;
+    width: 40px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.mode-image{
+    height: 30px;
+    width: 30px;
+    margin: 10px;
 }

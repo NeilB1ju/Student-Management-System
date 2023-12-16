@@ -14,10 +14,11 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { EditStudentComponent } from './components/edit-student/edit-student.component';
 import { FormComponent } from './components/form/form.component';
-import { ModalComponent } from './components/modal/modal.component';
+import { ModalComponent } from './components/modal-delete-student/modal.component';
 import { NavbarTopComponent } from './components/navbar-top/navbar-top.component';
 import { NavbarLeftComponent } from './components/navbar-left/navbar-left.component';
 import { ApiListComponent } from './components/api-list/api-list.component';
+import { ModalApiComponent } from './components/modal-api/modal-api.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ApiListComponent } from './components/api-list/api-list.component';
     NavbarTopComponent,
     NavbarLeftComponent,
     ApiListComponent,
+    ModalApiComponent,
   ],
   imports: [
     BrowserModule,

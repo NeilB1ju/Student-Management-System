@@ -1,0 +1,38 @@
+.modal-container{
+    height: 500px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--secondary-background);
+}
+
+button{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: var(--secondary-text);
+    color: var(--primary-background);
+    margin-top: 15px;
+}
+
+h1{
+    font-size: 1.7rem;
+    color: var(--primary-text);
+}
+
+p{
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--content);
+    font-weight: 600;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    padding-bottom: 5px;
+}

@@ -75,6 +75,9 @@
   </div>
   <button type="submit" class="submit">{{ text }}</button>
   <button class="clear" type="button" (click)="onClear()">Clear</button>
+  <button *ngIf="text == 'Edit'" class="cancel" (click)="cancelEdit()">
+    Cancel
+  </button>
 </form>
 <div *ngIf="invalidPhoneNumber" class="error-container">
   <p class="error">Invalid Phone Number</p>

@@ -1,4 +1,32 @@
-<h1>Welcome {{ username }}</h1>
-<div>
-  <a routerLink="/">Log Out</a>
-</div>
+<nav>
+  <h1>Welcome {{ username }}</h1>
+  <div class="container">
+    <a (click)="toggleDarkMode()">
+      <p *ngIf="!lightMode">Light Mode</p>
+      <img
+        *ngIf="!lightMode"
+        src="../../../assets/theme.svg"
+        alt="Log Out"
+        class="mode-image"
+      />
+    </a>
+    <a (click)="toggleDarkMode()">
+      <p *ngIf="lightMode">Dark Mode</p>
+      <img
+        *ngIf="lightMode"
+        src="../../../assets/theme-light.svg"
+        alt="Log Out"
+        class="mode-image"
+      />
+    </a>
+    <a routerLink="/">
+      <p>Log Out</p>
+      <img *ngIf="!lightMode" src="../../../assets/log out.svg" alt="Log Out" />
+      <img
+        *ngIf="lightMode"
+        src="../../../assets/log-out-light.svg"
+        alt="Log Out"
+      />
+    </a>
+  </div>
+</nav>

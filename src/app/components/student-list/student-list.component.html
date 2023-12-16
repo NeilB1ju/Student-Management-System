@@ -2,7 +2,31 @@
   <app-navbar-top></app-navbar-top>
   <app-navbar-left></app-navbar-left>
   <div class="content-container">
-    <h1>Student List</h1>
+    <div class="list-header-container">
+      <h1>Student List</h1>
+      <div class="sort-options">
+        <label for="sortOption">Sort by:</label>
+        <select
+          id="sortOption"
+          [(ngModel)]="selectedSortOption"
+          (change)="onSortOptionChange()"
+        >
+          <option value="roll_no">Roll Number</option>
+          <option value="name">Name</option>
+          <option value="department">Department</option>
+        </select>
+      </div>
+    </div>
+    <div class="search-container">
+      <label for="search">Search:</label>
+      <input
+        type="text"
+        class="search"
+        id="search"
+        [(ngModel)]="searchTerm"
+        (input)="onSearchChange()"
+      />
+    </div>
     <section *ngIf="!studentsArrayEmpty">
       <table>
         <tr>
@@ -20,7 +44,10 @@
           <th class="delete">Edit</th>
           <th class="edit">Delete</th>
         </tr>
-        <tr *ngFor="let student of students">
+        <tr
+          *ngFor="let student of students; let i = index"
+          [ngClass]="{ 'even-row': isEven(i), 'odd-row': !isEven(i) }"
+        >
           <td>{{ student.name }}</td>
           <td>{{ student.roll_no }}</td>
           <td>{{ student.dob }}</td>
@@ -33,11 +60,53 @@
           <td>{{ student.state }}</td>
           <td>{{ student.country }}</td>
           <td (click)="editStudent(student)" class="image-container">
-            <img src="../../../assets/edit.svg" alt="Edit" class="edit-image" />
+            <img
+              *ngIf="isEven(i) && !lightMode"
+              src="../../../assets/edit.svg"
+              alt="Edit"
+              class="edit-image"
+            />
+            <img
+              *ngIf="!isEven(i) && !lightMode"
+              src="../../../assets/edit-dark-alt.svg"
+              alt="Edit"
+              class="edit-image"
+            />
+            <img
+              *ngIf="isEven(i) && lightMode"
+              src="../../../assets/edit-light.svg"
+              alt="Edit"
+              class="edit-image"
+            />
+            <img
+              *ngIf="!isEven(i) && lightMode"
+              src="../../../assets/edit-light-alt.svg"
+              alt="Edit"
+              class="edit-image"
+            />
           </td>
           <td (click)="openModal(student.roll_no)" class="image-container">
             <img
+              *ngIf="isEven(i) && !lightMode"
               src="../../../assets/delete.svg"
+              alt="Delete"
+              class="delete-image"
+            />
+            <img
+              *ngIf="!isEven(i) && !lightMode"
+              src="../../../assets/delete-dark-alt.svg"
+              alt="Delete"
+              class="delete-image"
+            />
+            <img
+              *ngIf="isEven(i) && lightMode"
+              src="../../../assets/delete-light.svg"
+              alt="Delete"
+              class="delete-image"
+            />
+            <img
+              *ngIf="!isEven(i) && lightMode"
+              src="../../../assets/delete-light-alt.svg"
               alt="Delete"
               class="delete-image"
             />

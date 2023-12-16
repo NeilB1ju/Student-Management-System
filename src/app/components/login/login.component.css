@@ -9,7 +9,7 @@ section{
     left: 50%;
     gap: 10px;
     width: 350px;
-    height: 450px;
+    height: 470px;
     border: 1px solid var(--primary-text);
     padding: 20px;
     box-shadow: 0px 0px 5px 1px;
@@ -26,11 +26,9 @@ div{
 input{
     width: 310px;
     height: 35x;
-    border: 2px solid var(--primary-text);
     padding: 5px;
     font-size: 1rem;
     border-radius: 10px;
-    background-color: var(--content);
 }
 
 h1{
@@ -45,6 +43,7 @@ button{
     background-color: var(--primary-text);
     font-size: 1rem;
     transition: filter 0.2s ease-in-out;
+    color: var(--primary-background);
 }
 
 button:hover{
@@ -58,6 +57,7 @@ h3{
     margin: 0;
     font-weight: 400;
     font-size: 1rem;
+    color: var(--secondary-text);
 }
 
 .line{

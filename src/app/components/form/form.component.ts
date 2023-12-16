@@ -107,6 +107,14 @@ export class FormComponent {
     }
   }
 
+  cancelEdit(): void {
+    this.studentService.addStudent(this.studentToBeEdited!);
+    const currentRoute = this.route.snapshot.routeConfig?.path;
+    if (currentRoute === 'edit') {
+      this.router.navigate(['/list']);
+    }
+  }
+
   resetForm(): void {
     this.name = '';
     this.roll_no = '';

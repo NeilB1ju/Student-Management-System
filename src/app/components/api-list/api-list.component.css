@@ -17,6 +17,10 @@
     box-shadow: 0px 0px 5px 1px;
 }
 
+.card:hover{
+    opacity: 70%;
+}
+
 .card > img {
     height: 200px;
     width: 200px;
@@ -27,4 +31,6 @@ p{
     font-size: 1.1rem;
     text-align: center;
     color: var(--primary-background);
+    padding: 10px 0px 20px 0px;
+    font-weight: 600;
 }
