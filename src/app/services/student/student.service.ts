@@ -73,17 +73,52 @@ export class StudentService {
   searchStudents(searchTerm: string): Student[] {
     return this.students.filter((student: Student) => {
       return (
-        student.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        student.department.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        student.country.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        student.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        student.state.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        student.address1.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        student.address2.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        student.dob.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        student.roll_no == +searchTerm ||
-        student.phone == +searchTerm
+        (student.name &&
+          student.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (student.department &&
+          student.department
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase())) ||
+        (student.country &&
+          student.country.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (student.city &&
+          student.city.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (student.state &&
+          student.state.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (student.address1 &&
+          student.address1.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (student.address2 &&
+          student.address2.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (student.dob &&
+          student.dob.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (student.roll_no && student.roll_no.toString().includes(searchTerm)) ||
+        (student.phone && student.phone.toString().includes(searchTerm))
       );
     });
+  }
+
+  getStudentsCount(sortBy: string): { [key: string]: number } {
+    this.loadFromLocalStorage();
+    const studentsCount: { [key: string]: number } = {};
+
+    if (sortBy == 'Department') {
+      for (const student of this.students) {
+        if (studentsCount[student.department]) {
+          studentsCount[student.department]++;
+        } else {
+          studentsCount[student.department] = 1;
+        }
+      }
+      return studentsCount;
+    } else {
+      for (const student of this.students) {
+        if (studentsCount[student.state]) {
+          studentsCount[student.state]++;
+        } else {
+          studentsCount[student.state] = 1;
+        }
+      }
+      return studentsCount;
+    }
   }
 }

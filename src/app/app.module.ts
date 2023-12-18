@@ -19,6 +19,7 @@ import { NavbarTopComponent } from './components/navbar-top/navbar-top.component
 import { NavbarLeftComponent } from './components/navbar-left/navbar-left.component';
 import { ApiListComponent } from './components/api-list/api-list.component';
 import { ModalApiComponent } from './components/modal-api/modal-api.component';
+import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ModalApiComponent } from './components/modal-api/modal-api.component';
     NavbarLeftComponent,
     ApiListComponent,
     ModalApiComponent,
+    PieChartComponent,
   ],
   imports: [
     BrowserModule,

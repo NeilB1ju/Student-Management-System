@@ -1,0 +1,10 @@
+<div class="chart-grid">
+  <div class="chart-container">
+    <h1 *ngIf="dataPresent">Students by Department</h1>
+    <canvas id="departmentChart">{{ departmentChart }}</canvas>
+  </div>
+  <div class="chart-container">
+    <h1 *ngIf="dataPresent">Students by State</h1>
+    <canvas id="stateChart">{{ stateChart }}</canvas>
+  </div>
+</div>
