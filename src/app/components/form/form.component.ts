@@ -63,15 +63,15 @@ export class FormComponent {
 
     //Form Validation
     if (
-      this.name.trim() === '' ||
-      this.roll_no === '' ||
-      this.state.trim() === '' ||
-      this.city.trim() === '' ||
-      this.pincode === '' ||
-      this.dob === '' ||
-      this.address1.trim() === '' ||
-      this.country.trim() === '' ||
-      this.department.trim() === '' ||
+      !this.name ||
+      !this.roll_no ||
+      !this.state ||
+      !this.city ||
+      !this.pincode ||
+      !this.dob ||
+      !this.address1 ||
+      !this.country ||
+      !this.department ||
       +this.phone === null
     ) {
       this.missingFields = true;

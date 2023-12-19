@@ -51,6 +51,7 @@ a{
 .error{
     color: var(--primary-background);
     font-size: 1rem;
+    font-weight: 500;
 }
 
 .error-container{
