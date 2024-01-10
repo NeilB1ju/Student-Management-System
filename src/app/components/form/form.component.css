@@ -59,7 +59,7 @@ button:hover{
 .cancel{
     grid-area: 9 / 1 / 10 / 2;
     color: var(--primary-background);
-    background-color: var(--primary-background);
+    background-color: var(--secondary-text);
 }
 
 .error-container-form{
